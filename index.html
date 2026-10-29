@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie de cartes responsive développée avec HTML, CSS et JavaScript.">
     <title>Galerie de cartes</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -13,11 +15,11 @@
     </header>
 
     <main class="container">
-        <section>
-            <h2>Nos membres</h2>
-            <p id="status">Chargement des utilisateurs...</p>
+        <section aria-labelledby="gallery-title">
+            <h2 id="gallery-title">Nos membres</h2>
+            <p id="status" role="status" aria-live="polite">Chargement des utilisateurs...</p>
             <div id="gallery" class="gallery">
-              
+                <!-- Les cartes seront ajoutées par JavaScript -->
             </div>
         </section>
     </main>
@@ -25,7 +27,5 @@
     <footer class="footer">
         <p>&copy; 2026 Mini-projet Galerie de cartes</p>
     </footer>
-
-    <script type="module" src="js/main.js"></script>
 </body>
 </html>

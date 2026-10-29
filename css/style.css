@@ -1,10 +1,11 @@
-
+/* Réinitialisation de base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Style général */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f9;
@@ -12,10 +13,10 @@ body {
     line-height: 1.6;
 }
 
-
+/* En-tête */
 .header {
-    background-color: #15f0e6;
-    color: rgb(145, 6, 6);
+    background-color: #2563eb;
+    color: white;
     text-align: center;
     padding: 35px 20px;
 }
@@ -24,29 +25,43 @@ body {
     margin-bottom: 10px;
 }
 
-
+/* Contenu principal */
 .container {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
 }
 
+.container h2 {
+    margin-bottom: 20px;
+}
+
+/* Galerie CSS Grid */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* Carte Flexbox */
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(185, 210, 46);
+    background-color: white;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Effet au survol */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Avatar */
 .avatar {
     width: 90px;
     height: 90px;
@@ -55,34 +70,55 @@ body {
     margin-bottom: 15px;
 }
 
+/* Informations de la carte */
 .card h3 {
-    color: #070c65;
+    color: #2563eb;
     margin-bottom: 10px;
     text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .card p {
     margin: 5px 0;
     text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.card .email {
     color: #555;
     font-size: 0.9rem;
 }
 
+/* Pied de page */
 .footer {
     background-color: #1f2937;
-    color: rgb(218, 45, 45);
+    color: white;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
 
+/* Message de chargement ou d'erreur */
 #status {
     margin-bottom: 20px;
-    font-weight: bold;
 }
 
+/* Adaptation aux petits écrans */
 @media (max-width: 600px) {
+    .header {
+        padding: 25px 15px;
+    }
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
     .gallery {
         grid-template-columns: 1fr;
+    }
+    .card {
+        padding: 20px;
     }
 }
